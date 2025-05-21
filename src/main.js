@@ -16,7 +16,7 @@ const input = document.querySelector('input[name="search-text"]');
 
 form.addEventListener('submit', event => {
   event.preventDefault();
-  const query = input.elements.searchQuery.value.trim();
+  const query = input.value.trim();
   if (!query) return;
 
   clearGallery();
