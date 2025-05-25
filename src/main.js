@@ -9,6 +9,9 @@ import {
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
+window.showLoader = showLoader;
+window.hideLoader = hideLoader; 
+
 const form = document.querySelector('.form');
 const gallery = document.querySelector('.gallery');
 const loader = document.querySelector('.loader');
@@ -32,7 +35,7 @@ form.addEventListener('submit', event => {
           message:
             'Sorry, there are no images matching your search query. Please try again!',
           position: 'topRight',
-          timeout: 5000,
+          timeout: 3000,
         });
         return;
       }
@@ -43,9 +46,9 @@ form.addEventListener('submit', event => {
       hideLoader();
       iziToast.error({
         title: 'Error',
-        message: 'Oops! Something went wrong. Please try again later.',
+        message: 'Something went wrong. Please try again later.',
         position: 'topRight',
-        timeout: 5000,
+        timeout: 3000,
       });
       console.error(error);
     });
