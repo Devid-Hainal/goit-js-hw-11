@@ -18,7 +18,7 @@ export function getImagesByQuery(query) {
     .then(response => {
       return response.data;
     })
-    .cetch(error => {
+    .catch(error => {
       console.log(error.message);
       throw error;
     });
